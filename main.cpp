@@ -2,7 +2,7 @@
 
 using namespace std;
 
-//Á´±íµÄµÄ½áµã
+//èŠ‚ç‚¹
 struct Node {
     int number;
     Node *next = nullptr;
@@ -12,7 +12,7 @@ struct Node {
 
 };
 
-//Á´±í
+//é“¾è¡¨
 struct LinkList {
     int length = 0;
     Node *first = nullptr;
@@ -20,7 +20,7 @@ struct LinkList {
 };
 
 
-//ĞÂÔöÔªËØ
+//å¢åŠ å…ƒç´ 
 void add(LinkList *list, int number) {
     Node *l = list->last;
     Node *newNode = new Node(l, number, nullptr);
@@ -32,11 +32,11 @@ void add(LinkList *list, int number) {
     list->length = list->length + 1;
 }
 
-//É¾³ıÔªËØ
+//åˆ é™¤å…ƒç´ 
 void remove(LinkList *list, int number) {
     Node *x = list->first;
-    if (number == NULL) {
-        cout << "ÔªËØ²»´æÔÚ" << endl;
+    if (number == -1) {
+        cout << "å…ƒç´ ä¸å­˜åœ¨" << endl;
         return;
     }
     for (; x != nullptr; x = x->next) {
@@ -62,11 +62,11 @@ void remove(LinkList *list, int number) {
             return;
         }
     }
-    cout << "ÔªËØ²»´æÔÚ" << endl;
+    cout << "å…ƒç´ ä¸å­˜åœ¨" << endl;
 }
 
 
-//´òÓ¡ÔªËØ
+//æ‰“å°
 void print(LinkList *list) {
     Node *tmp = list->first;
     for (int i = 0; i < list->length; ++i) {
@@ -80,7 +80,7 @@ void print(LinkList *list) {
 
 
 int main() {
-    cout << "ÊäÈëÒÔ¿Õ¸ñ·Ö¿ªµÄn¸öÕûÊı£¬ÒÔ-1½áÊø:" << endl;
+    cout << "è¾“å…¥æ•°å­—ç©ºæ ¼åˆ†å‰²ï¼Œ-1ç»“æŸ:" << endl;
     auto *linkList = new LinkList();
     int number;
     while (cin >> number) {
@@ -90,7 +90,7 @@ int main() {
         add(linkList, number);
     }
 
-    cout << "ÔÙÊäÈëÒ»¸öÒªÉ¾³ıµÄÕûÊı:" << endl;
+    cout << "è¾“å…¥è¦åˆ é™¤çš„æ•°:" << endl;
     int removeNumber;
     cin >> removeNumber;
 
